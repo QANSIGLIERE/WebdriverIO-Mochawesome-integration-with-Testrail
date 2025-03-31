@@ -33,6 +33,25 @@ or
 
 ## How to use it
 
+Example:
+
+```
+let { parseMochawesomeAndSyncResultsToTestrail } = require('qansigliere-webdriverio-mochawesome-integration-with-testrail');
+
+(async function Integration() {
+    await parseMochawesomeAndSyncResultsToTestrail(
+        '../mochawesome/merged-report.json', // path to the file
+        'syncer.testrail.io', // testrail url
+        'demo@gmail.com', // testrail username
+        'L.WAa1j0Pb6s.D9u676J-/j6TYWBS5wIArzS5j1No', // testrail api key
+        1, // project id
+        1, // suite id
+        null, // test run id or null
+        'Demo Test Run', // test run name
+    );
+})();
+```
+
 ## Related Videos
 
 -   https://www.youtube.com/live/-oH2-QstQ6U?si=ddChgIV0Xy1ycW8N

@@ -1,4 +1,3 @@
-let { parseMochawesomeReport, syncResultsToTestrail } = require('./library/mochawesomeParser');
+let { parseMochawesomeAndSyncResultsToTestrail } = require('./library/library');
 
-module.exports.parseMochawesomeReport = parseMochawesomeReport;
-module.exports.syncResultsToTestrail = syncResultsToTestrail;
+module.exports.parseMochawesomeAndSyncResultsToTestrail = parseMochawesomeAndSyncResultsToTestrail;
