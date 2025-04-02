@@ -88,11 +88,22 @@ async function parseMochawesomeAndSyncResultsToTestrail(
     testRunID,
     testRunName,
 ) {
-    // Parse Mochawesome report
-    let reportResults = parseMochawesomeReport(pathToJSONReport);
+    if (pathToJSONReport && url && username && apiKey && projectID && suiteID) {
+        // Parse Mochawesome report
+        let reportResults = parseMochawesomeReport(pathToJSONReport);
 
-    // Testrail Integration
-    await syncResultsToTestrail(reportResults, url, username, apiKey, projectID, suiteID, testRunID, testRunName);
+        // Testrail Integration
+        await syncResultsToTestrail(reportResults, url, username, apiKey, projectID, suiteID, testRunID, testRunName);
+    } else {
+        console.log(`
+One of the following parameters is missing:
+Path to the merged-report.json: ${pathToJSONReport}
+URL: ${url}
+Username: ${username}
+API Key: ${apiKey}
+Project ID: ${projectID}
+Suite ID: ${suiteID}`);
+    }
 }
 
 module.exports.parseMochawesomeAndSyncResultsToTestrail = parseMochawesomeAndSyncResultsToTestrail;
