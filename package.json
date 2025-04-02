@@ -1,6 +1,6 @@
 {
   "name": "qansigliere-webdriverio-mochawesome-integration-with-testrail",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "The main idea of ​​this library created in the JavaScript language is to provide a better way to synchronize Mochawesome results with Testrail.",
   "main": "index.js",
   "scripts": {
